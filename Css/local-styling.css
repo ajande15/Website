@@ -1,0 +1,12 @@
+:root {
+    --red:rgb(221, 3, 39);
+    --solidRed:rgb(255, 37, 48);
+    --grey:rgb(184, 184, 212);
+    --black:rgb(4, 1, 26);
+    --purple:rgb(11, 4, 32);
+    --blue:rgb(31, 28, 211);
+    --green:rgb(121, 255, 139);
+    --lightBlue:rgb(119, 105, 228);
+    --purple:rgba(73, 12, 216, 0.6);
+}
+

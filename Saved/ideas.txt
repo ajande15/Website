@@ -1,0 +1,2 @@
+-Scroll through videos at the same time
+-Display active video in small container

@@ -1,0 +1,278 @@
+body,html {
+    height:100%;
+    position:relative;
+    overflow:hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin:0;
+    padding:0;
+}
+
+.wrapper {
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.fa-arrow-left {
+    position:absolute;
+    top:10px;
+    left:10px;
+    color: rgb(4, 1, 26);
+}
+
+.website-container {
+    width:90%;
+    height:90%;
+    border-radius:4px;
+
+    position:relative;
+}
+
+/*Title*/
+
+.title {
+    flex-direction:column;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:10px;
+}
+
+.title h1 {
+    color:rgb(1, 1, 24);
+    font-family:"Poppins",sans-serif;
+    font-weight:600;
+}
+
+.title h2 {
+    font-size:17px;
+    color: rgb(231, 22, 56);
+    /*color:rgb(207, 207, 218);*/
+    font-family:"Poppins",sans-serif;
+}
+
+/*End Title*/
+
+.create-account-section {
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    margin:10px;
+}
+
+.create-account-section p {
+    color:rgb(0, 1, 20);
+    font-family:"Poppins",sans-serif;
+    font-size:14px;
+    margin-right:30px;
+}
+
+.create-account-section p a {
+    color:rgb(231, 22, 56);
+    text-decoration:none;
+}
+
+/*Login form*/
+
+.email-wrapper {
+display:flex;
+position:relative;
+
+}
+
+.password-wrapper {
+    display:flex;
+}
+
+.ls-inputs {
+    border:1px solid #efefef;
+    border-radius:4px;
+    padding-top:12px;
+    padding-bottom:12px;
+    text-indent:12px;
+    flex:1;
+    width:0;
+    outline:none;
+    color:rgb(2, 2, 15);
+    font-family:"Poppins",sans-serif;
+
+    margin:10px;
+}
+
+.ls-inputs::placeholder {
+    color:rgb(2, 2, 15);
+    font-family:"Poppins",sans-serif;
+}
+
+.ls-inputs:focus {
+    background:rgb(100, 100, 235,0.1);
+    outline:1px solid rgb(100, 100, 235);
+}
+
+.forgot-section {
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    margin:10px;
+} 
+
+.forgot-section a {
+    text-decoration:none;
+    font-family:"Poppins",sans-serif;
+    color:rgb(46, 26, 228);
+}
+
+.submit-btn {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.submit {
+    flex:1;
+    max-width:75%;
+    padding-top:12px;
+    padding-bottom:12px;
+    margin:10px;
+    border:1px solid #efefef;
+    background:rgb(55, 55, 202);
+    color:#fff;
+    border-radius:4px;
+    font-family:"Poppins",sans-serif;
+}
+
+.submit:hover {
+    cursor:pointer;
+    background:rgba(55, 55, 202,0.5);
+}
+
+.or-section {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+
+.or-section p {
+    color:rgb(231, 22, 56);
+    font-family:"Poppins",sans-serif;
+    font-weight:500;
+    display:flex;
+    align-items:center;
+    white-space:nowrap;
+}
+
+.or-section p::before {
+    display:block;
+    content:"";
+    min-width:500px;
+    height:1px;
+    background:#bbbaba;
+    margin:10px;
+}
+
+.or-section p::after {
+    display:block;
+    content:"";
+    min-width:500px;
+    height:1px;
+    background:#bbbaba;
+    margin:10px;
+}
+/*End Login Form*/
+.sl-section {
+    margin:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.footer {
+    position:absolute;
+    bottom:0;
+    margin:10px;
+}
+
+.footer a {
+    text-decoration:none;
+    margin:10px;
+    color:rgb(167, 167, 167);
+}
+
+/*Error Styling*/
+
+.tperror {
+    font-family:"Poppins",sans-serif;
+    background:rgba(253, 39, 39,0.5);
+    padding-left:4px;
+    padding-right:4px;
+    padding-top:4px;
+    padding-bottom:4px;
+    border-radius:4px;
+    color:rgb(253, 39, 39);
+
+    transition:3s;
+}
+
+.emailerrors {
+    color:#fff;
+    background:rgb(58, 58, 173);
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:20px;
+    padding-right:20px;
+    font-family:"Poppins",sans-serif;
+    font-size:13px;
+
+    position:absolute;
+    left:10px;
+    bottom:-20px;
+    
+    transition:bottom 2s;
+}
+
+.checkpwd {
+    position:absolute;
+    bottom:0;
+    left:10px;
+}
+
+#g_id_onload {
+    margin: 10px;
+    width: 800px;
+}
+
+/*End Error Styling*/
+
+@media screen and (max-width:1024px) {
+    .footer {
+        display:none;
+    }
+}
+
+@media screen and (max-width:490px) {
+    .create-account-section p {
+        font-size:13px;
+    }
+
+    .forgot-section a {
+        font-size:13px;
+    }    
+}
+
+@media screen and (max-width:364px) {
+    
+}
+
+@media screen and (min-width:801px) {
+    .fa-arrow-left {
+        display:none;
+    }
+}
