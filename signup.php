@@ -80,5 +80,6 @@ require "header.php";
      </div>
 
 <?php 
-require "footer.php";
+/*require*/
+include_once "footer.php";
 ?>

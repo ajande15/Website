@@ -1,19 +1,38 @@
-/*Vertical Navbar Function*/
+/*Notifications*/
+const bell = document.getElementById("bell");
+const notifications = document.getElementById("notifications");
 
-const hamburgerMenu = document.getElementById("hamburger-menu");
-const vNavbar = document.getElementById("vertical-navbar");
+function displayNotifications() {
+    notifications.classList.toggle("clicked");
+}
 
-document.onclick = function(e) {
-    if(e.target.id !== 'vertical-navbar' && e.target.id !== 'hamburger-menu') {
-        hamburgerMenu.classList.remove("active");
-        vNavbar.classList.remove("active");
+document.addEventListener("click", function(event) {
+    if (!notifications.contains(event.target) && event.target !== bell) {
+        notifications.classList.remove("clicked");
     }
+});
+
+bell.addEventListener("click", function(event) {
+    event.stopPropagation();
+    displayNotifications();
+});
+
+
+/*Profile*/
+const profile = document.getElementById("profile-image");
+const profileOptions = document.getElementById("profile-options");
+
+function displayProfileOptions() {
+    profileOptions.classList.toggle("clicked");
 }
 
-hamburgerMenu.onclick = function() {
-    hamburgerMenu.classList.toggle("active");
-    vNavbar.classList.toggle("active");
-}
+document.addEventListener("click", function(event) {
+    if (!profileOptions.contains(event.target) && event.target !== profile) {
+        profileOptions.classList.remove("clicked");
+    }
+});
 
-/*End Vertical Navbar*/
-
+profile.addEventListener("click", function(event) {
+    event.stopPropagation();
+    displayProfileOptions();
+});

@@ -26,6 +26,7 @@ input, button, a, i {
     font-weight:bold;
     color:rgb(4, 1, 26);
     font-family:"Poppins",sans-serif;
+    font-size:30px;
 }
 
 .left .logo .hatt {
@@ -135,26 +136,87 @@ input, button, a, i {
 
 .right .profile-image {
     width:45px;
-    height:45px;
-    
+    height:45px; 
     border-radius:50%;
     margin:10px;
-
     border:1px solid rgb(31, 28, 211);
+    cursor:pointer;
+    transition:0.8s;
+}
+
+.right .profile-image:hover {
+    border:1px solid #9b9494;
+}
+
+.right .profile-image:active {
+    border:1px solid #efefef;
+}
+
+.profile-options {
+    width:200px;
+    height:260px;
+    box-shadow:2px 2px 12px 2px #efefef;
+    position:absolute;
+    top:60px;
+    right:8px;
+    background:#fff;
+    border:1px solid #efefef;
+    border-radius:2px;
+    pointer-events:none;
+    transition:0.3s;
+
+    opacity:0;
+}
+
+.profile-options.clicked {
+    opacity:1;
 }
 
 .right .bell-wrapper {
     position:relative;
     margin:30px;
-
-    padding:10px;
 }
 
 .right .fa-bell {
     color:rgb(1, 1, 14);
     font-size:20px;
     cursor:pointer;
+    padding-left:12px;
+    padding-right:12px;
+    padding-top:12px;
+    padding-bottom:12px;
+    border-radius:4px;
+    transition:0.4s;
 }
+
+.right .fa-bell:hover {
+    background:#efefef;
+}
+
+.right .fa-bell:active {
+    background:transparent;
+}
+
+.notifications {
+    position:absolute;
+    top:40px;
+    width:100px;
+    height:200px;
+    border:1px solid #efefef;
+    background:#fff;
+    box-shadow:2px 2px 12px 2px #efefef;
+    border-radius:10px;
+    border-top-left-radius:0;
+    transition:0.4s;
+    pointer-events:none;
+
+    opacity:0;
+}
+
+.notifications.clicked {
+    opacity:1;
+}
+
 
 .right .dot-for-bell {
     width:9px;
@@ -162,12 +224,11 @@ input, button, a, i {
     border-radius:80px;
     background:rgb(233, 10, 77);
     position:absolute;
-    right:0;
+    right:3px;
     top:3px;
 }
 
 .right .upload {
-    border:none;
     font-family:"Poppins",sans-serif;
     color:rgb(31, 28, 211);
     border-radius:30px;
@@ -179,7 +240,6 @@ input, button, a, i {
     max-width:200px;
     margin:30px;
     cursor:pointer;
-
     border:1px solid #efefef;
     transition:0.2s;
 }
@@ -380,6 +440,12 @@ input, button, a, i {
         display:none;
     }
 
+    @media screen and (min-width:826px) {
+        .links .upload-link {
+            display:none;
+        }
+    }
+
 
     .right .profile-image {
         border:1px solid #efefef;
@@ -395,3 +461,5 @@ input, button, a, i {
         display:none;
     }
 }
+
+

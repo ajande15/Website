@@ -5,7 +5,8 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
     <title>Chatt</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d5b1d340c5.js" crossorigin="anonymous"></script>
@@ -15,8 +16,6 @@ session_start();
     <link rel="stylesheet" href="css/header.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="css/forms.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="css/homepage.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="css/upload-styles.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="css/header-content.css?v=<?php echo time(); ?>">
     <link rel="shortcut icon" type="image/png" href="Images/favicon.png">
 </head>
 <body>
@@ -38,10 +37,16 @@ session_start();
             <a href="upload.php"><button class="upload">Upload</button></a>
             <div class="bell-wrapper">
             <div class="dot-for-bell"></div>
-            <i class="fa-solid fa-bell"></i>
+            <i class="fa-solid fa-bell" id="bell">
+            <div class="notifications" id="notifications"></div>
+            </i>
             </div>
-            <div class="profile-image">
+            <div class="profile-image" id="profile-image">
+            <div class="profile-options" id="profile-options">
+                
             </div>
+            </div>
+
         </div>
 
         <div class="vertical-navbar" id="vertical-navbar">
@@ -50,7 +55,7 @@ session_start();
         </div>
         <div class="links">
             <div class="active-container">
-            <li><a href="">Home</a></li>
+            <li><a href="homepage.php">Home</a></li>
             <div class="active circle"></div>
             </div>
             <div class="active-container">
@@ -68,8 +73,8 @@ session_start();
             <div class="active-container">
             <li><a href="">Settings</a></li>
             </div>
-            <div class="active-container">
-            <li><a href="">Help</a></li>
+            <div class="active-container upload-link">
+            <li><a href="upload.php">Upload</a></li>
             </div>
         </div>
         <div class="direct-links">
@@ -118,5 +123,8 @@ session_start();
     </style>
 </header>
 
+<?php
+include_once "footer.php";
+?>
 
 <!--Inside of the website-->

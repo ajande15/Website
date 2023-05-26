@@ -2,10 +2,19 @@
 require "safe-header.php";
 ?>
 
-<div class="wrapper">
+<div class="homepage-wrapper">
+<div class="header-options">
+    <div class="left">
+        <input type="search" placeholder="Search">
+        <i class="fa-solid fa-microphone"></i>
+        <i class="fa-solid fa-plus"></i>
+    </div>
+</div>
+<!--What Im Gonna do: Scroller of People-->
+<div class="scroller">
+</div>
 <div class="content">
-    <div class="user-content-container">
-        dfasjhkh
+    <div class="user-content-container"> 
     </div>
     <div class="user-content-container">
     </div>
@@ -40,5 +49,6 @@ require "safe-header.php";
 </div>
     
 <?php 
-require "footer.php";
+/*require*/
+include_once "footer.php";
 ?>

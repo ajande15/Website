@@ -1,3 +1,4 @@
-<script src="js/script.js"></script>
+<script src="Js/navbar.js"></script>
+<script src="Js/script.js"></script>
 </body>
 </html>
