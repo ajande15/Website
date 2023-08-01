@@ -20,7 +20,9 @@ require "header.php";
         }
         ?>
            </div>
-           <form action="serverside/signup-server.php" method="post"> 
+           <form action="serverside/signup-server.php" method="post" enctype="multipart/form-data"> 
+
+           
            <div class="email-wrapper">
               <input class="ls-inputs" type="text" name="email" placeholder="Email">
               <?php
@@ -45,6 +47,10 @@ require "header.php";
            </div>
            <div class="password-wrapper">
               <input class="ls-inputs" type="password" name="confirmpassword" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+           </div>
+           <div class="file-wrapper">
+           <!--<label for="file" class="image-selector">Choose Profile</label>-->
+           <input type="file" name="profile" id="file" accept="image/jpg, image/jpeg, image/png">
            </div>
            <div class="forgot-section">
               <a href="">Forgot Password?</a>
@@ -83,3 +89,5 @@ require "header.php";
 /*require*/
 include_once "footer.php";
 ?>
+
+

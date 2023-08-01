@@ -1,7 +1,6 @@
 <?php
 require "safe-header.php";
 ?>
-
 <div class="homepage-wrapper">
 <div class="header-options">
     <div class="left">

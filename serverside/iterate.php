@@ -1,5 +1,27 @@
 <?php
 
+function usernameExists($conn, $username) {
+    $sql = "SELECT * FROM users WHERE usersName = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)) {
+        header("Location: ../signup.php?error=tryagain");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+
+    if($row = mysqli_fetch_assoc($result)) {
+        return $row;
+    } else {
+        return false;
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
 function emptySignup($email, $password, $confirmPassword) {
     $result;
     if (empty($email) || empty($password) || empty($confirmPassword)) {
@@ -57,23 +79,18 @@ function emailExists($conn, $email) {
     mysqli_stmt_close($stmt);
 }
 
+
 function createAccount($conn, $email, $password) {
-    $sql = "INSERT INTO users (usersEmail, usersPwd) VALUES (?, ?);";
-    $stmt = mysqli_stmt_init($conn);
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../signup.php?error=tryagain");
-        exit();
-    }
+    $sql = "INSERT INTO users (usersEmail, usersPwd) VALUES (?, ?)";
+    $stmt = $conn->prepare($sql);
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $stmt->bind_param("ss", $email, $hashedPassword);
+    $stmt->execute();
+    $stmt->close();
 
-    $hiddenPass = password_hash($password, PASSWORD_DEFAULT);
-
-    mysqli_stmt_bind_param($stmt, "ss", $email, $hiddenPass);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close($stmt);
     header("location: ../signup.php?error=signupsuccess");
     exit();
 }
-
 
 
 function emptyLogin($email, $password) {
@@ -105,7 +122,7 @@ function allowUser($conn, $email, $password) {
     else if ($validatePass === true) {
         session_start();
         $_SESSION["userid"] = $emailExists["usersId"];
-        $_SESSION["useremail"] = $userEmail["usersEmail"];
+        $_SESSION["useremail"] = $emailExists["usersEmail"];
         header("location: ../homepage.php");
         exit();
     }

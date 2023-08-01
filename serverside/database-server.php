@@ -1,4 +1,5 @@
 <?php
+require_once "iterate.php";
 
 $sName = "localhost";
 $dbUsername = "root";
@@ -10,3 +11,4 @@ $conn = mysqli_connect($sName, $dbUsername, $dbPassword, $dbName);
 if (!$conn) {
     die("Sorry, cannot connect, try again later " . mysqli_connect_error());
 }
+

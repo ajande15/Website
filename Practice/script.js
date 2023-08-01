@@ -1,7 +1,7 @@
-var eye = document.querySelector('.fa-eye');
-var ball = document.querySelector('.fa-ball');
-var turn = document.querySelector('.fa-turn');
-var person = document.querySelector('.fa-person');
-var truck = document.querySelector('.fa-truck');
-var loot = document.querySelector('.loot');
-var spoken = document.querySelector('.fa-person');
+document.addEventListener("scroll", function() {
+    const content = document.querySelector(".content");
+    const scrollPercentage = (window.scrollY / (content.offsetHeight - window.innerHeight)) * 100;
+    const hue = scrollPercentage * 3.6; // Convert to hue value (0-360)
+  
+    content.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+  });

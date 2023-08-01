@@ -81,14 +81,43 @@ body,html {
 
 /*Login form*/
 
-.email-wrapper {
+.email-wrapper{
 display:flex;
 position:relative;
+}
 
+.username-wrapper {
+    display:flex;
+    position:relative;
 }
 
 .password-wrapper {
     display:flex;
+}
+
+.file-wrapper {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.file-wrapper input[type="file"] {
+    display:none;
+}
+
+.file-wrapper .image-selector {
+    background:#efefef;
+    color:rgb(4, 1, 26);
+    font-family:"Poppins",sans-serif;
+    font-size:13px;
+    padding-top:12px;
+    padding-bottom:12px;
+    width:100%;
+    text-align:center;
+    border-radius:4px;
+    cursor:pointer;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
 .ls-inputs {
@@ -102,7 +131,6 @@ position:relative;
     outline:none;
     color:rgb(2, 2, 15);
     font-family:"Poppins",sans-serif;
-
     margin:10px;
 }
 
